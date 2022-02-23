@@ -27,6 +27,8 @@ namespace CRUDAPI {
                 opcoes => opcoes.UseSqlServer (Configuration.GetConnectionString ("ConexaoBD"),
                 builder => builder.EnableRetryOnFailure()));
 
+            services.AddScoped<IPessoaService, PessoasService>();
+            
             services.AddCors ();
 
             services.AddControllers ();
